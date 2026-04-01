@@ -30,7 +30,7 @@ const translations = {
     bio: profile.bioPl,
     discordButton: "Wkrótce...",
     subscriberLabel: "Suby",
-    subscriberText: "YouTube na żywo",
+    subscriberText: "",
     subscriberGain: "+1",
     youtubeText: "Mój kanał na YT",
     discordName: profile.discord.labelPl,
