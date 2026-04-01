@@ -44,7 +44,7 @@ const translations = {
     bio: profile.bioEn,
     discordButton: "Coming soon...",
     subscriberLabel: "NOT WORKING",
-    subscriberText: "Live from YouTube",
+    subscriberText: "",
     subscriberGain: "+1",
     youtubeText: "My YouTube channel",
     discordName: profile.discord.labelEn,
