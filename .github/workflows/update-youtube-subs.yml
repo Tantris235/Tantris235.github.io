@@ -24,8 +24,8 @@ jobs:
       - name: Update subscriber count
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-          YOUTUBE_HANDLE: Tantris235
-          YOUTUBE_CHANNEL_ID: ""
+          YOUTUBE_HANDLE: 
+          YOUTUBE_CHANNEL_ID: "UCirkJMqzyYIbnGq96kdqDMw"
         run: node scripts/update-subs.mjs
 
       - name: Commit updated subscriber count
