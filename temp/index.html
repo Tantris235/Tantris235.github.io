@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mój profil</title>
+  <meta
+    name="description"
+    content="Animowana strona tytułowa z informacjami o YouTube, Discordzie oraz nickach w Minecraft i Roblox."
+  >
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="background-glow background-glow-left"></div>
+  <div class="background-glow background-glow-right"></div>
+
+  <div class="language-switcher reveal" aria-label="Language switcher">
+    <button class="lang-button" id="langPl" type="button">PL</button>
+    <button class="lang-button" id="langEn" type="button">EN</button>
+  </div>
+
+  <aside class="admin-panel" id="adminPanel" aria-hidden="false">
+    <div class="admin-panel-header">
+      <div>
+        <p class="admin-eyebrow">Panel</p>
+        <h2 class="admin-title">Admin Panel</h2>
+      </div>
+      <a class="admin-back" href="../">Strona</a>
+    </div>
+
+    <form class="admin-form" id="adminForm">
+      <label class="admin-field">
+        <span>Nick główny</span>
+        <input id="adminDisplayName" name="displayName" type="text">
+      </label>
+
+      <label class="admin-field">
+        <span>Opis PL</span>
+        <textarea id="adminBioPl" name="bioPl" rows="3"></textarea>
+      </label>
+
+      <label class="admin-field">
+        <span>Opis EN</span>
+        <textarea id="adminBioEn" name="bioEn" rows="3"></textarea>
+      </label>
+
+      <label class="admin-field">
+        <span>YouTube nazwa</span>
+        <input id="adminYoutubeLabel" name="youtubeLabel" type="text">
+      </label>
+
+      <label class="admin-field">
+        <span>YouTube link</span>
+        <input id="adminYoutubeUrl" name="youtubeUrl" type="url">
+      </label>
+
+      <label class="admin-field">
+        <span>Discord nazwa PL</span>
+        <input id="adminDiscordLabelPl" name="discordLabelPl" type="text">
+      </label>
+
+      <label class="admin-field">
+        <span>Discord nazwa EN</span>
+        <input id="adminDiscordLabelEn" name="discordLabelEn" type="text">
+      </label>
+
+      <label class="admin-field">
+        <span>Discord link</span>
+        <input id="adminDiscordUrl" name="discordUrl" type="url">
+      </label>
+
+      <label class="admin-field">
+        <span>Minecraft nick</span>
+        <input id="adminMinecraftLabel" name="minecraftLabel" type="text">
+      </label>
+
+      <label class="admin-field">
+        <span>Minecraft link</span>
+        <input id="adminMinecraftUrl" name="minecraftUrl" type="url">
+      </label>
+
+      <label class="admin-field">
+        <span>Roblox nick</span>
+        <input id="adminRobloxLabel" name="robloxLabel" type="text">
+      </label>
+
+      <label class="admin-field">
+        <span>Roblox link</span>
+        <input id="adminRobloxUrl" name="robloxUrl" type="url">
+      </label>
+
+      <div class="admin-actions">
+        <button class="admin-action admin-action-primary" type="submit">Zapisz</button>
+        <button class="admin-action admin-action-secondary" id="adminReset" type="button">Reset</button>
+      </div>
+    </form>
+  </aside>
+
+  <main class="hero hero-admin" id="hero">
+    <section class="hero-panel tilt-card">
+      <h1 class="title reveal" id="displayName">Tantris235</h1>
+      <p class="subtitle reveal" id="bio">
+        Siema lubię programować i grać w gry. Na tej stronie znajdziesz informacje o mnie
+      </p>
+
+      <div class="stats-row reveal">
+        <section class="subscriber-widget" id="subscriberCard" aria-live="polite">
+          <span class="subscriber-label" id="subscriberLabel">Suby</span>
+          <div class="subscriber-inline">
+            <div class="subscriber-counter" id="subscriberCounter"></div>
+            <span class="subscriber-badge" id="subscriberBadge">+1</span>
+          </div>
+          <p class="subscriber-text" id="subscriberText">YouTube na żywo</p>
+        </section>
+      </div>
+
+      <div class="cta-row reveal">
+        <a class="button button-secondary" id="discordLink" href="#" target="_blank" rel="noreferrer">
+          Dolacz na Discord
+        </a>
+      </div>
+    </section>
+
+    <section class="info-grid reveal tilt-card">
+      <a class="info-card info-card-link" id="cardYoutube" href="#" target="_blank" rel="noreferrer">
+        <span class="card-label" id="labelYoutube">YouTube</span>
+        <strong class="card-value" id="youtubeName">Twoj kanal</strong>
+        <p class="card-text" id="textYoutube">Miejsce na link do Twoich filmów, live'ów i nowości.</p>
+      </a>
+
+      <a class="info-card info-card-link" id="cardDiscord" href="#" target="_blank" rel="noreferrer">
+        <span class="card-label" id="labelDiscord">Discord</span>
+        <strong class="card-value" id="discordName">Mój serwer Discord</strong>
+        <p class="card-text" id="textDiscord">Dodaj serwer lub swój nick, żeby ludzie wiedzieli, gdzie Cię znaleźć.</p>
+      </a>
+
+      <a class="info-card info-card-link" id="cardMinecraft" href="#" target="_blank" rel="noreferrer">
+        <span class="card-label" id="labelMinecraft">Minecraft</span>
+        <strong class="card-value" id="minecraftNick">TwojNickMC</strong>
+        <p class="card-text" id="textMinecraft">Pokaż swój nick i daj innym szybko Cię rozpoznać.</p>
+      </a>
+
+      <a class="info-card info-card-link" id="cardRoblox" href="#" target="_blank" rel="noreferrer">
+        <span class="card-label" id="labelRoblox">Roblox</span>
+        <strong class="card-value" id="robloxNick">TwojNickRBX</strong>
+        <p class="card-text" id="textRoblox">Tutaj ustawisz swój nick Roblox i ewentualnie link do profilu.</p>
+      </a>
+    </section>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>
